@@ -15,8 +15,9 @@ To set up this repository, follow these steps:
 
 1. **Install Requirements:**
    Make sure you have Python installed (recommended version 3.11). Then, install the required packages listed in `requirements.txt`.
+   Dont Forget to setup Mongodb !!
 
-2. **Discord Developer Portal:**
+3. **Discord Developer Portal:**
    Go to the Discord Developer Portal and set up the necessary callbacks.You will find client id and client secret in Oauth2 in discord developer portal and token in bot section.
    You will need to make changes in the following files:
 
