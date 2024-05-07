@@ -2,4 +2,4 @@ requests
 flask
 discord.py
 pymongo
-sqlalchemy
+
