@@ -21,7 +21,7 @@ mutualguild_collection = None
 
 #--------------------------------------------------MONGO DB SETUP--------------------------------------------------------------
 
-uri = "mongodb+srv://Adarsh:hjmvgcNzc3BzUBOU@cluster0.oakdq2w.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+uri = ""
 
 # Create a new client and connect to the server
 client = MongoClient(uri)
@@ -107,7 +107,7 @@ def callback():
 @app.route('/dashboard')
 def dashboard():
     if 'token' not in session:
-        return redirect("https://discord.com/api/oauth2/authorize?client_id=894889958647693343&response_type=code&redirect_uri=http%3A%2F%2Fconnect2grp.live%2Fcallback&scope=identify+guilds")
+        return redirect("")
     user_name = get_user_name(session.get('token'))
     user = user_name['username']
     mutualguild_collection = db[user]
