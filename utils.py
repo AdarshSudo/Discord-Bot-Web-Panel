@@ -1,10 +1,10 @@
 import requests
 
-def get_token(code:str, CLIENT_ID = "894889958647693343", CLIENT_SECRET = "DoL75ZF9saML--K6urvlGVItjxedVOdo"):
+def get_token(code:str, CLIENT_ID = "", CLIENT_SECRET = ""):
     data = {
         'grant_type': 'authorization_code',
         'code': code,
-        'redirect_uri': "http://connect2grp.live/callback"
+        'redirect_uri': "http://127.0.0.1:5000/callback"
     }
     headers = {
         'Content-Type': 'application/x-www-form-urlencoded'
