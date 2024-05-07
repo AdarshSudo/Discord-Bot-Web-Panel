@@ -2,4 +2,4 @@ requests
 flask
 Flask-Discord
 discord.py
-"pymongo[srv]"==3.11
+pymongo
