@@ -40,6 +40,6 @@ If you encounter any bugs or issues while using this Web Panel, please create an
 ## Contact
 
 Feel free to reach out to me on Discord if you have any questions or need assistance:
-Discord Account: adarsh_69
+Discord Account: `adarsh_69`
 
 **Note:** This project may contain bugs or loopholes. Your feedback and contributions are highly appreciated!
