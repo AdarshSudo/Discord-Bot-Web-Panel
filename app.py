@@ -1,9 +1,6 @@
 import discord
 from discord.ext import commands
 from flask import Flask, render_template, request, redirect, session, url_for , Response
-from sqlalchemy import create_engine, Column, String, Integer
-from sqlalchemy.orm import declarative_base, sessionmaker
-from sqlalchemy.exc import IntegrityError
 import pymongo
 from pymongo.mongo_client import MongoClient
 import json
