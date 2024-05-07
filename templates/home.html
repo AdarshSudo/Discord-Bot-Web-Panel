@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, shrink-to-fit=no"
+    />
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+    <title>Welcome to Your 24/7 Bot Website</title>
+    <link rel="stylesheet" href="/static/home.css" />
+  </head>
+
+  <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+    <!-- Page Navbar -->
+    <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
+      <div class="container">
+        <a class="logo" href="#">24/7 Discord bot</a>
+        <ul class="nav">
+          <li class="item">
+            <a class="link" onclick="loginWithDiscord()">Login</a>
+          </li>
+          <li class="item">
+            <label class="switch">
+              Dark Mode
+              <input type="checkbox" id="darkModeToggle" />
+              <span class="slider round"></span>
+            </label>
+          </li>
+        </ul>
+        <a
+          href="javascript:void(0)"
+          id="nav-toggle"
+          class="hamburger hamburger--elastic"
+        >
+          <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+          </div>
+        </a>
+      </div>
+    </nav>
+    <!-- End of Page Navbar -->
+
+    <!-- page header -->
+    <header id="home" class="header">
+      <div class="overlay"></div>
+      <div class="header-content container">
+        <h1 class="header-title">
+          <span class="up">HI!</span>
+          <span class="down">I am 24/7</span>
+        </h1>
+        <p class="header-subtitle">A Discord Utility Bot</p>
+      </div>
+    </header>
+    <!-- end of page header -->
+
+    <footer>
+      Image by
+      <a
+        href="https://www.freepik.com/free-vector/spot-lights-background-hanging-lights_9461160.htm#page=3&query=spot%20light%20wall&position=4&from_view=keyword&track=ais&uuid=9958882a-b759-44cc-ba46-e8d3e543e298"
+        >Freepik</a
+      >
+    </footer>
+
+    <script>
+      function loginWithDiscord() {
+        // Add your Discord login logic here
+        // alert("Login with Discord clicked!");
+        var redirectUrl =
+          "https://discord.com/api/oauth2/authorize?client_id=894889958647693343&response_type=code&redirect_uri=http%3A%2F%2Fconnect2grp.live%2Fcallback&scope=identify+guilds";
+        window.location.href = redirectUrl;
+      }
+    </script>
+    <script src="/static/jquery-3.4.1.js"></script>
+    <script src="/static/bootstrap.bundle.js"></script>
+    <script src="/static/bootstrap.affix.js"></script>
+    <script src="/static/home.js"></script>
+  </body>
+</html>
