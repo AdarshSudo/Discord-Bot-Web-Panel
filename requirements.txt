@@ -3,3 +3,4 @@ flask
 Flask-Discord
 discord.py
 pymongo
+sqlalchemy
