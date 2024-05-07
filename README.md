@@ -1,5 +1,12 @@
 # Discord Bot Web Panel
 
+![GitHub](https://img.shields.io/github/license/AdarshSudo/Discord-Bot-Web-Panel)
+![GitHub issues](https://img.shields.io/github/issues/AdarshSudo/Discord-Bot-Web-Panel)
+![GitHub forks](https://img.shields.io/github/forks/AdarshSudo/Discord-Bot-Web-Panel)
+![GitHub stars](https://img.shields.io/github/stars/AdarshSudo/Discord-Bot-Web-Panel)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/AdarshSudo/Discord-Bot-Web-Panel)
+
+
 Welcome to the Discord Bot Web Panel repository! This project aims to provide a web panel interface for managing a Discord bot.
 
 ## Setup Instructions
