@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 requests
 flask
 discord.py
 pymongo
 
+=======
+requests
+flask
+discord.py
+pymongo
+
+>>>>>>> 63d019208465c0991cd6eac36be5ce37fa99bc92
