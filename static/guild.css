@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&family=Rajdhani:wght@300;400;500;600;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Poetsen+One&family=Rajdhani:wght@300;400;500;600;700&display=swap");
 
 * {
   font-family: "Rajdhani", sans-serif;
   font-weight: 500;
-  font-style: normal
+  font-style: normal;
 }
 
 .main-box {
@@ -12,10 +11,9 @@
   transition: background-color 0.3s;
 }
 
-
 .main-box:hover {
   cursor: pointer;
-  background-color: #737c83
+  background-color: #737c83;
 }
 
 .header-text {
@@ -50,8 +48,8 @@
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -62,16 +60,16 @@
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider:before {
@@ -88,7 +86,6 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-
 
 select {
   padding: 5px;

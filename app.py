@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 from flask import Flask, render_template, request, redirect, session, url_for , Response
+from flask_discord import DiscordOAuth2Session
 import pymongo
 from pymongo.mongo_client import MongoClient
 import json
@@ -12,6 +13,7 @@ from utils import get_token, get_user_name, get_user_guilds , get_bot_guilds, ge
 
 bot = commands.Bot('+', intents=discord.Intents().all())
 
+#GLOBAL DECLARATIONS
 global user, mutualguild_collection
 user = ' '
 mutualguild_collection = None
@@ -34,35 +36,20 @@ db = client['discord_database']
 
 guild_collection = db["guilds"]
 
-# collection_name = dbname["user_1_items"]
-
-# item_1 = {
-#   "_id" : "U1IT00001",
-#   "item_name" : "Blender",
-#   "max_discount" : "10%",
-#   "batch_number" : "RR450020FRG",
-#   "price" : 340,
-#   "category" : "kitchen appliance"
-# }
-
-# item_2 = {
-#   "_id" : "U1IT00002",
-#   "item_name" : "Egg",
-#   "category" : "food",
-#   "quantity" : 12,
-#   "price" : 36,
-#   "item_description" : "brown country eggs"
-# }
-# collection_name.insert_many([item_1,item_2])
 
 #---------------------------------------------------------------------------------------------------------------------
 
 
-
+#FLASK SETUP
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "this_is_a_secret"
+app.config["DISCORD_CLIENT_ID"] = config.DISCORD_CLIENT_ID    
+app.config["DISCORD_CLIENT_SECRET"] = config.DISCORD_CLIENT_SECRET                
+app.config["DISCORD_REDIRECT_URI"] = config.DISCORD_REDIRECT_URI                 
+app.config["DISCORD_BOT_TOKEN"] = config.token 
 
 
+#DISCORD BOT SETUP
 @bot.event
 async def on_ready():
     print('bot ready to go')
@@ -82,6 +69,14 @@ async def on_ready():
             f'{guild.name} (id: {guild.id})'
         )
     
+#DM FUNCTION
+discord = DiscordOAuth2Session(app)
+
+def welcome_user(user_name):
+    dm_channel = discord.bot_request("/users/@me/channels", "POST", json={"recipient_id": user_name['id']})
+    return discord.bot_request(
+        f"/channels/{dm_channel['id']}/messages", "POST", json={"content": "Thanks for authorizing the app!"}
+    )
 
 
 @app.route('/')
@@ -107,6 +102,7 @@ def dashboard():
         return redirect("")
     user_name = get_user_name(session.get('token'))
     user = user_name['username']
+    welcome_user(user_name)
     mutualguild_collection = db[user]
     user_guilds = get_user_guilds(session.get('token'))
     bot_guilds = get_bot_guilds()
@@ -158,6 +154,7 @@ def toggle():
     guild_collection.update_one({"id": guild_id}, {"$set": {"main_welcome": switch_state}}, upsert=True)
     return 'Switch state updated successfully'
 
+# Route to handle switch toggle2
 @app.route('/toggle2', methods=['POST'])
 def toggle2():
     # Retrieve switch state from the HTML form
@@ -168,6 +165,7 @@ def toggle2():
     guild_collection.update_one({"id": guild_id}, {"$set": {"welcome_default": switch_state}}, upsert=True)
     return 'Switch state updated successfully'
 
+# Route to handle switch toggle3
 @app.route('/toggle3', methods=['POST'])
 def toggle3():
     # Retrieve switch state from the HTML form
@@ -178,6 +176,7 @@ def toggle3():
     guild_collection.update_one({"id": guild_id}, {"$set": {"goodbye_default": switch_state}}, upsert=True)
     return 'Switch state updated successfully'
 
+# Route to handle switch toggle4
 @app.route('/toggle4', methods=['POST'])
 def toggle4():
     # Retrieve switch state from the HTML form
@@ -188,6 +187,7 @@ def toggle4():
     guild_collection.update_one({"id": guild_id}, {"$set": {"role_giving": switch_state}}, upsert=True)
     return 'Switch state updated successfully'
 
+# Route to handle submit form 
 @app.route('/submit', methods=['POST'])
 def submit():
     selected_option = request.form['selectedOption']  # Get the selected option from form data
