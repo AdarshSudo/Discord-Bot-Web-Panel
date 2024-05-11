@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 // ---------GUILD HTML ONLOAD-----------
 window.onload = function() {
@@ -212,7 +211,6 @@ if (alertTrigger) {
   })
 }
 
-=======
 
 // ---------GUILD HTML ONLOAD-----------
 window.onload = function() {
@@ -426,4 +424,3 @@ if (alertTrigger) {
   })
 }
 
->>>>>>> 63d019208465c0991cd6eac36be5ce37fa99bc92
