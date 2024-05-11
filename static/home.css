@@ -13,6 +13,15 @@
 */
 @import url("https://fonts.googleapis.com/css?family=Baloo+Paaji|Open+Sans:300,300i,400,400i,600,600i,700,700i");
 
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+
+* {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 500;
+  font-style: normal
+}
+
 html {
   font-family: sans-serif;
   line-height: 1.15;

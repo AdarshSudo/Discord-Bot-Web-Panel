@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+
+* {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 500;
+  font-style: normal
+}
+
 .main-box {
   background-color: #565b5f; /* Initial background color */
   transition: background-color 0.3s;
