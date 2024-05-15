@@ -196,7 +196,6 @@ def submit():
     # Update MongoDB collection with selected option
     guild_collection.update_one({"id": guild_id}, {"$set": {"role_name": selected_option}}, upsert=True)
     guild_collection.update_one({"id": guild_id}, {"$set": {"channel_id": dc_id}}, upsert=True)
-    # return 'Role Updated successfully!'
     return Response(status=204)
     
 
