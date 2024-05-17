@@ -48,4 +48,4 @@ Discord Account: `adarsh_69`
 
 
 ## Updates
-1. ** Will be updating The Frontend and the Backend with improved UI and features in the future. **
+1. **Will be updating The Frontend and the Backend with improved UI and features in the future.**
