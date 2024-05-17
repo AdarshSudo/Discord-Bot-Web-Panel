@@ -45,3 +45,7 @@ Feel free to reach out to me on Discord if you have any questions or need assist
 Discord Account: `adarsh_69`
 
 **Note:** This project may contain bugs or loopholes. Your feedback and contributions are highly appreciated!
+
+
+## Updates
+1. ** Will be updating The Frontend and the Backend with improved UI and features in the future. **
